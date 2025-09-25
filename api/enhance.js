@@ -1,4 +1,5 @@
-import fetch from "node-fetch";
+//!fetch is builtin in vercel thats why commenting this line
+//import fetch from "node-fetch";
 
 
 const stylePrompts = {

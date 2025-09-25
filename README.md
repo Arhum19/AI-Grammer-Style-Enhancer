@@ -1,103 +1,121 @@
-AI Grammar & Style Enhancer
+# AI Grammar & Style Enhancer
 
 A full-stack web application that uses AI to enhance text with grammar correction and style transformation.
 
-🚀 Features
+## Features
 
-Grammar Fix – Correct grammar and spelling errors
+- **Grammar Fix**: Correct grammar and spelling errors
+- **Slang**: Transform text into casual, modern slang
+- **Formal**: Convert text to professional, formal language
+- **Persuasive**: Rewrite text to be more convincing and compelling
 
-Slang – Transform text into casual, modern slang
+## Tech Stack
 
-Formal – Convert text to professional, formal language
+- **Frontend**: React + TailwindCSS
+- **Backend**: Node.js + Express
+- **AI API**: OpenRouter (gpt-oss-turbo model)
 
-Persuasive – Rewrite text to be more convincing and compelling
+## Setup Instructions
 
-🛠 Tech Stack
+### 1. Environment Setup
 
-Frontend: React + Vite + TailwindCSS
+Create a `.env` file in the root directory with your OpenRouter API key:
 
-Backend: Node.js + Express
-
-AI API: OpenRouter (gpt-oss-turbo model)
-
-Utilities: Concurrently for running frontend & backend together
-
-⚙️ Setup Instructions
-1. Environment Setup
-
-Create a .env file in the root directory with your OpenRouter API key:
-
-AI_KEY=your_openrouter_api_key_here
+```env
+AiKey=your_openrouter_api_key_here
 PORT=5000
+```
 
-2. Install Dependencies
+### 2. Install Dependencies
+
+```bash
 npm install
+```
 
-3. Run the Application
+### 3. Run the Application
 
-Run frontend and backend together:
+To start both frontend and backend simultaneously:
 
+```bash
 npm start
-
+```
 
 Or run them separately:
 
+```bash
 # Backend only
-npm run server  
+npm run server
 
-# Frontend only
-npm run dev  
+# Frontend only (in another terminal)
+npm run dev
+```
 
-4. Access the Application
+### 4. Access the Application
 
-Frontend: http://localhost:5173
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:5000
 
-Backend API: http://localhost:5000
+## API Endpoints
 
-📡 API Endpoints
-POST /api/enhance
+### POST /api/enhance
 
 Enhance text with the specified style.
 
-Request Body:
+**Request Body:**
 
+```json
 {
   "text": "Your text to enhance",
   "style": "grammar" // or "slang", "formal", "persuasive"
 }
+```
 
+**Response:**
 
-Response:
-
+```json
 {
   "success": true,
   "originalText": "Original text",
   "enhancedText": "Enhanced text",
   "style": "grammar"
 }
+```
 
-GET /api/health
+### GET /api/health
 
 Health check endpoint to verify server status.
 
-🖥 Development
+## Usage
 
-Vite for fast frontend development
+1. Enter or paste your text in the textarea
+2. Select the enhancement style (Grammar Fix, Slang, Formal, or Persuasive)
+3. Click "Enhance Text"
+4. View the results and copy the enhanced text if needed
 
-Express for backend API
+## Development
 
-TailwindCSS for styling
+The application uses:
 
-Concurrently to run both services
+- Vite for fast frontend development
+- Express for the backend API
+- TailwindCSS for styling
+- Concurrently to run both services
 
-📦 Deployment
+## License
 
-The app is ready to deploy on Vercel.
+MIT License+ Vite
 
-Frontend is served from Vite’s build output (dist/)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Backend routes are handled as API functions
+Currently, two official plugins are available:
 
-📜 License
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-MIT License
+## React Compiler
+
+The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -56,7 +56,7 @@ function App() {
     setResult(null);
 
     try {
-      // Use relative path; Vite dev proxy will forward to backend
+      
       const response = await fetch("/api/enhance", {
         method: "POST",
         headers: {
@@ -73,7 +73,7 @@ function App() {
         try {
           data = await response.json();
         } catch (_) {
-          // Swallow JSON parse errors here; we'll handle as empty body below
+      
           data = null;
         }
       } else {
@@ -103,7 +103,7 @@ function App() {
 
       setResult(data);
     } catch (err) {
-      // Network errors (CORS, server down) often surface as TypeError in fetch
+      // cors and networks error can be found here
       const isNetworkError =
         err?.name === "TypeError" || /fetch|network/i.test(err?.message || "");
       const message = isNetworkError
